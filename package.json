@@ -1,0 +1,29 @@
+{
+  "name": "frontend-boilerplate",
+  "version": "0.0.1",
+  "description": "Quickstart frontend developer environment: coffeescript, jade and stylus on node.js with twitter bootstrap and livereload2.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": "",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "clinch": "*",
+    "mocha": "*",
+    "chai": "*",
+    "grunt": "*",
+    "coffee-script": "*",
+    "express": "*",
+    "stylus": "*",
+    "jade": "*",
+    "lodash": "*",
+    "livereload2": "*",
+    "fs-extra": "*",
+    "ncp": "*",
+    "async": "*",
+    "nodemon": "*"
+  }
+}
