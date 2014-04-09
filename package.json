@@ -1,6 +1,6 @@
 {
   "name": "frontend-boilerplate",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Quickstart frontend developer environment: coffeescript, jade and stylus on node.js with twitter bootstrap and livereload2.",
   "main": "index.js",
   "scripts": {
@@ -20,7 +20,7 @@
     "stylus": "*",
     "jade": "*",
     "lodash": "*",
-    "livereload2": "*",
+    "livereload": "git://github.com/Meettya/node-livereload.git#livereload2",
     "fs-extra": "*",
     "ncp": "*",
     "async": "*",

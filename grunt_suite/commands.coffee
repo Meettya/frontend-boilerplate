@@ -73,7 +73,7 @@ compile_src = (bundle_name, root_path, result_dir, cb) ->
 
       packer.buldPackage bundle_name, pack_config, (err, data) ->
         throw err if err?
-        fs.outputFile "#{path.join result_dir, filename}.js", data, encoding='utf8', (err) ->
+        fs.outputFile "#{path.join result_dir, filename}.js", data, encoding= 'utf8', (err) ->
           throw err if err?
           console.log "Compiled #{filename}.js"
           all_done
