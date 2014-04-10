@@ -43,21 +43,20 @@ port = process.env.PORT or 3000
 app = express()
 app.locals.pretty = true
 
+app.use express.favicon __dirname + '/../develop_suite/public/images/favicon.ico'
+
+app.use logErrors
+app.use clientErrorHandler
+app.use errorHandler
+
+# its for stylus pre-compiller
+app.use stylus.middleware src : path.join root_path, 'develop_suite/public'
+
+app.use express.static path.join root_path, 'develop_suite/public'
+
 app.configure ->
   app.set 'views', path.join root_path, 'develop_suite/views'
   app.set 'view engine', 'jade'
-
-  # its for stylus pre-compiller
-  app.use stylus.middleware 
-    src : path.join root_path, 'develop_suite/public'
-
-  app.use express.static path.join root_path, 'develop_suite/public'
-
-  app.use express.favicon()
-  
-  app.use logErrors
-  app.use clientErrorHandler
-  app.use errorHandler
 
 
 # static page
@@ -82,9 +81,9 @@ app.get "/js/:js_name", (req, res, next) ->
       res.send data
 
 # live reload suport
-livereload_server = livereload.createServer exts: ['styl', 'jade', 'coffee', 'js']
-livereload_server.watch path.join root_path, 'develop_suite'
-livereload_server.watch path.join root_path, 'src'
+#livereload_server = livereload.createServer exts: ['styl', 'jade', 'coffee', 'js'], debug : on
+#livereload_server.watch path.join root_path, 'develop_suite'
+#livereload_server.watch path.join root_path, 'src'
 
 console.log "Starting server on port: #{port}"
 server = app.listen port
