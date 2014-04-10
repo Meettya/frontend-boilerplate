@@ -1,28 +1,26 @@
-div.navbar.navbar-inverse.navbar-fixed-top
-  div.navbar-inner
-    div.container
-      a.btn.btn-navbar(data-toggle="collapse", data-target=".nav-collapse")
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-      a.brand(href="index.html")
+nav.navbar.navbar-inverse(role="navigation")
+  .container-fluid
+    .navbar-header
+      a.navbar-brand(href="index.html")
         | Project demo
-      div.nav-collapse.collapse
-        ul.nav
-          li
-            a(href="index.html")
-              | Home
-          li
-            a(href="cstest.html")
-              | Test CS
+
+    .collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li
+          a(href="index.html")
+            | Home
+        li
+          a(href="cstest.html")
+            | Test CS
 
 
 // add active toggler to navbar
-:coffeescript
-  $ ->
-    page_path = /([^/]+)$/.exec @location.pathname
-    $(".nav li a[href='#{page_path[1]}']").parents('li').addClass 'active'
-    null
+script
+  :coffee
+    $ ->
+      page_path = /([^/]+)$/.exec @location.pathname
+      $(".nav li a[href='#{page_path[1]}']").parents('li').addClass 'active'
+      null
 
 
 
