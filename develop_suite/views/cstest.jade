@@ -2,27 +2,33 @@ extends includes/layout
 
 block content
 
-  script(src='vendor/head.load-0.99.min.js')
+  script(src='vendor/head.load-1.0.3.min.js')
 
-  :coffeescript
-    head.js { example : "js/example.js?#{+new Date()}" }
+  script
+    :coffee
+      head.js { example : "js/example.js?#{+new Date()}" }
   
   // main loader
-  :coffeescript
-    head.ready "example", ->
-      {greater} = ExamplePackage
+  script
+    :coffee
+      head.ready "example", ->
+        {greater} = ExamplePackage
 
-      # if DOM ready
-      $ ->
-        $('#result').html "\"#{greater()}\""
+        # if DOM ready
+        $ ->
+          $('#result').html "#{greater('Bender')}"
 
-  div.container
+  .container
     h1 CoffeeScript demo page
     
-    div.span8
-      p
-        | This is CoffeeScript demo page, created with clinch.
+    .row
+      .col-md-8
+        p
+          | This is CoffeeScript demo page, created with clinch.
 
-    div.span8
-      span Node says 
-      span#result hm... its not worked :(
+    .row
+      .col-md-8
+        span Node says
+
+    .row
+      #result.col-md-8 hm... its not worked :(

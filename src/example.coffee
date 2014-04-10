@@ -2,4 +2,7 @@
 This is example CoffeeScript file
 ###
 
-module.exports = -> "Hello world!"
+template = require './tmpl/template'
+
+module.exports = (name) ->
+  template { name }
