@@ -20,10 +20,10 @@
     "stylus": "*",
     "jade": "*",
     "lodash": "*",
-    "livereload": "git://github.com/Meettya/node-livereload.git#livereload2",
     "fs-extra": "*",
     "ncp": "*",
     "async": "*",
-    "nodemon": "*"
+    "nodemon": "*",
+    "static-favicon": "*"
   }
 }
